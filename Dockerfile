@@ -1,0 +1,4 @@
+FROM openjdk:17
+ADD target/PMS-0.0.1-SNAPSHOT.jar PMS-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java" "-jar", "PMS-0.0.1-SNAPSHOT.jar"]
+EXPOSE 8083
