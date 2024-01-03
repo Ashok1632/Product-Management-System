@@ -3,8 +3,6 @@ package com.ashok.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -53,5 +51,8 @@ public class Product {
 	
 	@OneToMany(mappedBy = "product", cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
 	private List<CartItem> products = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "product", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	private List<OrderItem> orderItems = new ArrayList<>();
 	
 }
